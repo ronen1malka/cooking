@@ -23,37 +23,44 @@ export class BooksListService {
     let book = new Book();
     let recipe = new Recipe()
 
-    book.name="italian food";
-    book.description="book for italian food";
+    book.name="אוכל איטלקי";
+    book.description="ספר מתכונים מהמטבח האיטלקי";
     book.shareType="private"
     
-    recipe.name="spagetti"
-    recipe.description="yammi spagetti"
-    recipe.ingredients=["one pack of spagetti","5 cups of water","salt"];
-    recipe.preparation="Coock all ingredients";
+    recipe.name="ספגטי"
+    recipe.description="ספגט טעים"
+    recipe.ingredients=["חבילת ספגטי","5 כוסות מים","מלח"];
+    recipe.preparation="לבשל בסיר את כל המרכיבים";
     book.recipes.push(recipe);
     
     recipe = new Recipe()
-    recipe.name="pasta"
-    recipe.description="yammi pasta"
-    recipe.ingredients=["one pack of pasta","5 cups of water","Tomato souce","salt"];
-    recipe.preparation="Coock all ingredients";
+    recipe.name="פסטה"
+    recipe.description="פסטה טעימה"
+    recipe.ingredients=["one pack of pasta","5 כוסות מים","Tomato souce","מלח"];
+    recipe.preparation="לבשל בסיר את כל המרכיבים";
     book.recipes.push(recipe);
             
     recipe = new Recipe()
-    recipe.name="pizza"
-    recipe.description="yammi pizza"
-    recipe.ingredients=["one pack of pizza","Tomato souce","salt"];
-    recipe.preparation="Coock all ingredients";
+    recipe.name="פיצה"
+    recipe.description="פיצה מעולה"
+    recipe.ingredients=["one pack of pizza","רסק עגבניות","מלח"];
+    recipe.preparation="לבשל בסיר את כל המרכיבים";
     book.recipes.push(recipe);
-
 
     books.push(book);
 
     book = new Book();
-    book.name="American food";
-    book.description="book for American food";
+    book.name="אוכל אמריקאי";
+    book.description="מתכונים אמריקאים";
     book.shareType="private"
+
+    recipe = new Recipe()
+    recipe.name="המבורגר"
+    recipe.description="המבורגר מעולה"
+    recipe.ingredients=["חצי קילו בשר טחון","רסק עגבניות","מלח"];
+    recipe.preparation="לטגן את כל המרכיבים";
+    book.recipes.push(recipe);
+
 
     books.push(book);
     return books;

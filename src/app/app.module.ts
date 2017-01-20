@@ -4,6 +4,17 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { BooksListPage } from '../pages/books-list/books-list'
 import { BooksListService } from '../providers/books-list.service'
+import {AngularFireModule} from 'angularfire2'
+
+
+  export const firbaseConfig = {
+    apiKey: "AIzaSyCrbS2lPxm9Gy65eCXu4WIKAcic1ks8DYI",
+    authDomain: "coocking-ef7da.firebaseapp.com",
+    databaseURL: "https://coocking-ef7da.firebaseio.com",
+    storageBucket: "coocking-ef7da.appspot.com",
+    messagingSenderId: "679421931049"
+  };
+  
 
 @NgModule({
   declarations: [
@@ -12,7 +23,8 @@ import { BooksListService } from '../providers/books-list.service'
     BooksListPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firbaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [

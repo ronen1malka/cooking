@@ -1,0 +1,48 @@
+[{
+		"id": "0",
+		"name": "אוכל איטלקי",
+		"description": "ספר מתכונים מהמטבח האיטלקי",
+		"shareType": "private",
+		"recipes": [{
+				"name": "ספגטי",
+				"description": "ספגט טעים",
+				"ingredients": ["חבילת ספגטי", "5 כוסות מים", "מלח"],
+				"preparation": "לבשל בסיר את כל המרכיבים"
+			}, {
+				"name": "פסטה",
+				"description": "פסטה טעימה",
+				"ingredients": ["one pack of pasta", "5 כוסות מים", "Tomato souce", "מלח"],
+				"preparation": "לבשל בסיר את כל המרכיבים"
+			}, {
+				"name": "פיצה",
+				"description": "פיצה מעולה",
+				"ingredients": ["one pack of pizza", "רסק עגבניות", "מלח"],
+				"preparation": "לבשל בסיר את כל המרכיבים"
+			}
+		]
+	}, {
+		"id": "0",
+		"name": "אוכל אמריקאי",
+		"description": "מתכונים אמריקאים",
+		"shareType": "private",
+		"recipes": [{
+				"name": "המבורגר",
+				"description": "המבורגר מעולה",
+				"ingredients": ["חצי קילו בשר טחון", "רסק עגבניות", "מלח"],
+				"preparation": "לטגן את כל המרכיבים"
+			}
+		]
+	}, {
+		"id": "0",
+		"name": "אוכל ישראלי",
+		"description": "מתכונים ישראלים",
+		"shareType": "private",
+		"recipes": [{
+				"name": "פלאפל",
+				"description": "פאךאפל מעולה",
+				"ingredients": ["קילו חומוס", "רסק עגבניות", "מלח"],
+				"preparation": "לטגן את כל המרכיבים"
+			}
+		]
+	}
+]

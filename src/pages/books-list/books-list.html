@@ -18,7 +18,7 @@
     <button ion-fab mini><ion-icon name="add"></ion-icon></button>
   </ion-fab>
   <ion-list>
-    <button ion-item *ngFor="let book of books" (click)="itemSelected(item)">
+    <button ion-item *ngFor="let book of books | async" (click)="itemSelected(item)">
     {{ book.name }}
   </button>
   </ion-list>

@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-import {Book} from '../app/entities/book'
-import {Recipe} from '../app/entities/recipe'
+import { Book } from '../app/entities/book'
+import { Recipe } from '../app/entities/recipe'
 
 /*
   Generated class for the BooksList provider.
@@ -13,13 +13,20 @@ import {Recipe} from '../app/entities/recipe'
 */
 @Injectable()
 export class BooksListService {
-  
+  books: Book[] = [];
   constructor(public http: Http) {
     console.log('Hello BooksList Provider');
+    //var books1 = this.getBooks()
+    //console.log(JSON.stringify(books1));
   }
 
-  getBooks(){
-    let books:Book[]=[];
+  getBooks() {
+    return this.http.request('../app/test_data.json')
+      .map(res => res.json());
+
+      
+
+    /*let books:Book[]=[];
     let book = new Book();
     let recipe = new Recipe()
 
@@ -61,8 +68,21 @@ export class BooksListService {
     recipe.preparation="לטגן את כל המרכיבים";
     book.recipes.push(recipe);
 
-
     books.push(book);
-    return books;
+
+    book = new Book();
+    book.name="אוכל ישראלי";
+    book.description="מתכונים ישראלים";
+    book.shareType="private"
+
+    recipe = new Recipe()
+    recipe.name="פלאפל"
+    recipe.description="פאךאפל מעולה"
+    recipe.ingredients=["קילו חומוס","רסק עגבניות","מלח"];
+    recipe.preparation="לטגן את כל המרכיבים";
+    book.recipes.push(recipe);
+
+    books.push(book);*/
+    //return this.books;
   }
 }

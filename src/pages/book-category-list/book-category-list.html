@@ -7,12 +7,19 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>book-category-list</ion-title>
+    <ion-title>{{bookName}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-fab left bottom>
+    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+  <ion-list>
+    <button ion-item *ngFor="let category of bookCategories | async" (click)="itemSelected(category)">
+    {{ category.name }}
+  </button>
+  </ion-list>
 </ion-content>

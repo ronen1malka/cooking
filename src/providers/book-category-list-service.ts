@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+
 import 'rxjs/add/operator/map';
+import { AngularFire } from 'angularfire2';
 
-/*
-  Generated class for the BookCategoryListService provider.
 
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular 2 DI.
-*/
 @Injectable()
 export class BookCategoryListService {
 
-  constructor(public http: Http) {
+  constructor(private af: AngularFire) {
     console.log('Hello BookCategoryListService Provider');
+  }
+
+  getBookCategories(bookId){
+    return this.af.database.list('/books/'+bookId+"/categories")
   }
 
 }

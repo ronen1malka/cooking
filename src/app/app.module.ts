@@ -1,10 +1,17 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+
 import { HomePage } from '../pages/home/home';
-import { BooksListPage } from '../pages/books-list/books-list'
-import { BooksListService } from '../providers/books-list.service'
-import {AngularFireModule} from 'angularfire2'
+import { BooksListPage } from '../pages/books-list/books-list';
+import {BookCategoryListPage} from '../pages/book-category-list/book-category-list';
+import {CategoryRecipesListPage} from '../pages/category-recipes-list/category-recipes-list';
+
+import { BooksListService } from '../providers/books-list.service';
+import {BookCategoryListService} from '../providers/book-category-list-service';
+import {RecipeService} from '../providers/recipe-service';
+
+import {AngularFireModule} from 'angularfire2';
 
 
   export const firbaseConfig = {
@@ -20,7 +27,9 @@ import {AngularFireModule} from 'angularfire2'
   declarations: [
     MyApp,
     HomePage,
-    BooksListPage
+    BooksListPage,
+    BookCategoryListPage,
+    CategoryRecipesListPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -30,10 +39,15 @@ import {AngularFireModule} from 'angularfire2'
   entryComponents: [
     MyApp,
     HomePage,
-    BooksListPage
+    BooksListPage,
+    BookCategoryListPage,
+    CategoryRecipesListPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    BooksListService]
+    BooksListService,
+    BookCategoryListService,
+    RecipeService
+    ]
 })
 export class AppModule { }

@@ -2,12 +2,16 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+//Pages
 import { HomePage } from '../pages/home/home';
+import { LoginPage } from '../pages/login/login';
 import { BooksListPage } from '../pages/books-list/books-list';
 import {BookCategoryListPage} from '../pages/book-category-list/book-category-list';
 import {CategoryRecipesListPage} from '../pages/category-recipes-list/category-recipes-list';
 
+//Services
 import { BooksListService } from '../providers/books-list.service';
+import { LoginService } from '../providers/login-service';
 import {BookCategoryListService} from '../providers/book-category-list-service';
 import {RecipeService} from '../providers/recipe-service';
 
@@ -29,7 +33,8 @@ import {AngularFireModule} from 'angularfire2';
     HomePage,
     BooksListPage,
     BookCategoryListPage,
-    CategoryRecipesListPage
+    CategoryRecipesListPage,
+    LoginPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -41,13 +46,15 @@ import {AngularFireModule} from 'angularfire2';
     HomePage,
     BooksListPage,
     BookCategoryListPage,
-    CategoryRecipesListPage
+    CategoryRecipesListPage,
+    LoginPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     BooksListService,
     BookCategoryListService,
-    RecipeService
+    RecipeService,
+    LoginService
     ]
 })
 export class AppModule { }

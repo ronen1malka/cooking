@@ -30,6 +30,7 @@ export class LoginPage {
     })
    .catch(error => console.log("LOGIN-ERROR",error));
   }
+  
   register() {
     this._loginService.register(this.email, this.password)
     .then(authState => {

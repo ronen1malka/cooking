@@ -1,18 +1,33 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { AngularFire,AuthMethods,AuthProviders } from 'angularfire2';
 import 'rxjs/add/operator/map';
 
-/*
-  Generated class for the LoginService provider.
 
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular 2 DI.
-*/
 @Injectable()
 export class LoginService {
 
-  constructor(public http: Http) {
+  constructor(private af: AngularFire) {
     console.log('Hello LoginService Provider');
   }
 
+  login(email, password) {
+    return this.af.auth.login({
+      email: email,
+      password: password
+    },{
+    method:AuthMethods.Password,
+    provider:AuthProviders.Password
+   });   
+  }
+
+  register(email, password) {
+    return this.af.auth.createUser({
+      email: email,
+      password: password
+    });
+  }
+
+  logout() {
+    this.af.auth.logout();
+  }
 }

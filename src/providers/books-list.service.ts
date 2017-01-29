@@ -10,11 +10,11 @@ import { AngularFire } from 'angularfire2';
 
 @Injectable()
 export class BooksListService {
-  //books: Book[] = [];
+  
 
   constructor(private af: AngularFire) {
     console.log('Hello BooksList Provider');
-    //this.sampledata();    
+  
   }
 
   getBooks() {

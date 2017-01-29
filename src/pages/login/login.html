@@ -17,12 +17,12 @@
   <ion-list no-lines>
     <ion-item>
       <ion-label stacked>אימייל</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="email"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>סיסמה</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
     </ion-item>
     <ion-item>
       <button ion-button block default (click)="doLogin()">
@@ -30,9 +30,16 @@
       </button>
     </ion-item>
     <ion-item>
-      <button ion-button block color="secondary">
+      <button ion-button block color="secondary" (click)="register()">
         רישום
       </button>
     </ion-item>
+    <ion-item>
+      <button ion-button block color="secondary" (click)="logout()">
+        יציאה
+      </button>
+    </ion-item>
+
+
   </ion-list>
 </ion-content>

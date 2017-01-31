@@ -14,6 +14,7 @@ import { BooksListService } from '../providers/books-list.service';
 import { LoginService } from '../providers/login-service';
 import {BookCategoryListService} from '../providers/book-category-list-service';
 import {RecipeService} from '../providers/recipe-service';
+import {alerts} from '../shared/alerts';
 
 import {AngularFireModule} from 'angularfire2';
 
@@ -54,7 +55,8 @@ import {AngularFireModule} from 'angularfire2';
     BooksListService,
     BookCategoryListService,
     RecipeService,
-    LoginService
+    LoginService,
+    alerts
     ]
 })
 export class AppModule { }

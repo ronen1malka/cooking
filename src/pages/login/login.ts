@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { BooksListPage } from '../books-list/books-list';
-import { LoginService } from '../../providers/login-service'
+import { LoginService } from '../../providers/login-service';
+import {alerts} from '../../shared/alerts';
+
 
 @Component({
   selector: 'page-login',
@@ -13,7 +15,8 @@ export class LoginPage {
 
   constructor(private navCtrl: NavController,
     private navParams: NavParams,
-    private _loginService: LoginService) {
+    private _loginService: LoginService,
+    private _alerts:alerts) {
 
   }
 
@@ -28,7 +31,10 @@ export class LoginPage {
         console.log("LOGIN-THEN",authState);
         this.navCtrl.push(BooksListPage);
     })
-   .catch(error => console.log("LOGIN-ERROR",error));
+   .catch(error => {
+       console.log("LOGIN-ERROR",error)
+       this._alerts.showAlert("Error","Login failed",["OK"])
+      });
   }
   
   register() {

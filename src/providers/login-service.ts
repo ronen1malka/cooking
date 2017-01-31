@@ -20,7 +20,7 @@ export class LoginService {
    });   
   }
 
-  register(email, password) {
+  register(email="", password="") {
     return this.af.auth.createUser({
       email: email,
       password: password
